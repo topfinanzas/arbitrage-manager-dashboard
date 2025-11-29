@@ -525,14 +525,15 @@ async def google_callback(code: str, state: str):
         user_tokens[session_id] = token_data
         
         # Redirect back to frontend with session ID
-        frontend_url = "http://localhost:5173"
+        frontend_url = os.getenv('FRONTEND_URL', 'http://localhost:5173')
         return RedirectResponse(
             url=f"{frontend_url}?auth_success=true&session_id={session_id}"
         )
     except Exception as e:
         print(f"❌ OAuth callback error: {e}")
+        frontend_url = os.getenv('FRONTEND_URL', 'http://localhost:5173')
         return RedirectResponse(
-            url=f"http://localhost:5173?auth_error=true&message={str(e)}"
+            url=f"{frontend_url}?auth_error=true&message={str(e)}"
         )
 
 class ExportRequest(BaseModel):
