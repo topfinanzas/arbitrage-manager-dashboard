@@ -1,0 +1,158 @@
+/* ============================================================================
+   KPI CARDS - Clean Corporate Design
+   ============================================================================ */
+.kpi-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.kpi-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    /* Explicitly set row */
+    align-items: flex-start;
+    gap: 1rem;
+    transition: all 0.2s ease;
+}
+
+.kpi-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: #d1d5db;
+    transform: translateY(-2px);
+}
+
+.kpi-icon {
+    width: 56px;
+    /* Slightly larger */
+    height: 56px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    flex-shrink: 0;
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.kpi-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center vertically relative to icon if needed */
+    gap: 0.125rem;
+}
+
+.kpi-label {
+    font-size: 0.95rem;
+    color: #6b7280;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.kpi-value {
+    font-size: 2.5rem;
+    /* Large and prominent */
+    font-weight: 800;
+    color: #111827;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.kpi-value.positive {
+    color: #10b981;
+}
+
+.kpi-value.negative {
+    color: #ef4444;
+}
+
+.kpi-value.excellent {
+    color: #10b981;
+}
+
+.kpi-value.profitable {
+    color: #059669;
+}
+
+.kpi-value.break-even {
+    color: #f59e0b;
+}
+
+.kpi-value.loss {
+    color: #ef4444;
+}
+
+.kpi-subtitle {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 0.125rem;
+}
+
+.kpi-delta {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 0.375rem;
+}
+
+.kpi-delta.delta-positive {
+    color: #10b981;
+}
+
+.kpi-delta.delta-negative {
+    color: #ef4444;
+}
+
+/* Loading State */
+.kpi-cards.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.kpi-card.skeleton {
+    background: linear-gradient(90deg,
+            #f3f4f6 25%,
+            #e5e7eb 50%,
+            #f3f4f6 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .kpi-cards {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .kpi-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .kpi-value {
+        font-size: 1.25rem;
+    }
+}

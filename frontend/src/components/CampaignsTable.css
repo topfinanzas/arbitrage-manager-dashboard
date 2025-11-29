@@ -1,0 +1,209 @@
+.campaigns-section {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.section-header h2 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    min-width: 200px;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    transition: border-color 0.2s ease;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filter-buttons button {
+    padding: 0.75rem 1.25rem;
+    border: 2px solid #e5e7eb;
+    background: white;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-buttons button:hover {
+    border-color: #667eea;
+    background: #f3f4f6;
+}
+
+.filter-buttons button.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: transparent;
+}
+
+.filter-buttons button.critical {
+    border-color: #ef4444;
+}
+
+.filter-buttons button.critical.active {
+    background: #ef4444;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.campaigns-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.campaigns-table thead {
+    background: #f9fafb;
+}
+
+.campaigns-table th {
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #6b7280;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.campaigns-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 0.875rem;
+}
+
+.campaigns-table tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.campaigns-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.campaign-name {
+    max-width: 300px;
+}
+
+.name-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.name-cell .name {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.name-cell .id {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.market-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.market-badge.br {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.market-badge.mx {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.market-badge.other {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.positive {
+    color: #059669;
+    font-weight: 600;
+}
+
+.negative {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.roas-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.roas-badge.excellent {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.roas-badge.profitable {
+    background: #ecfccb;
+    color: #365314;
+}
+
+.roas-badge.break-even {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.roas-badge.loss {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem !important;
+    color: #9ca3af;
+}
+
+.table-loading {
+    text-align: center;
+    padding: 3rem;
+    color: #6b7280;
+}

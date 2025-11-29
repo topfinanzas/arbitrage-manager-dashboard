@@ -1,0 +1,206 @@
+/* ============================================================================
+   CAMPAIGN PERFORMANCE - Table and Tabs
+   ============================================================================ */
+
+.campaign-performance-container {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+/* Tabs */
+.performance-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+}
+
+.tabs-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #6b7280;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    bottom: -0.5rem;
+}
+
+.tab-btn:hover {
+    color: #111827;
+    background: #f9fafb;
+}
+
+.tab-btn.active {
+    color: #3b82f6;
+    border-bottom-color: #3b82f6;
+}
+
+/* Export Button */
+.export-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+    background: #0f9d58;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.export-btn:hover {
+    background: #0d8a4d;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(15, 157, 88, 0.3);
+}
+
+.export-btn:active {
+    transform: translateY(0);
+}
+
+/* Table Container */
+.performance-table-container {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+/* Table */
+.performance-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.performance-table thead {
+    background: #f9fafb;
+}
+
+.performance-table th {
+    padding: 0.875rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
+    white-space: nowrap;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+/* Right-align numeric columns */
+.performance-table th:not(:nth-child(1)):not(:nth-child(2)) {
+    text-align: right;
+}
+
+.performance-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: #111827;
+    white-space: nowrap;
+}
+
+/* Right-align numeric data */
+.performance-table td:not(:nth-child(1)):not(:nth-child(2)) {
+    text-align: right;
+}
+
+.performance-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.performance-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ID Column - Compact */
+.performance-table td:nth-child(1),
+.performance-table th:nth-child(1) {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Name Column - Wide for full names */
+.performance-table td:nth-child(2),
+.performance-table th:nth-child(2) {
+    min-width: 400px;
+    max-width: 500px;
+    font-weight: 500;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/* Profit Colors */
+.performance-table td.positive {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.performance-table td.negative {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+/* ROAS Colors */
+.performance-table td.excellent {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.performance-table td.profitable {
+    color: #059669;
+    font-weight: 600;
+}
+
+.performance-table td.break-even {
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+.performance-table td.loss {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+/* States */
+.loading,
+.error,
+.empty-state {
+    padding: 3rem;
+    text-align: center;
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+.error {
+    color: #ef4444;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .performance-table {
+        font-size: 0.8125rem;
+    }
+
+    .performance-table th,
+    .performance-table td {
+        padding: 0.75rem 0.5rem;
+    }
+}
